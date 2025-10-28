@@ -1,7 +1,7 @@
 ## Install PowerToys (Windows Store)
 ### Make a workspace
 - Open `PowerToys -> Workspaces` Tick `Create desktop shortcut` and `Move existing windows`
-- Find the `Workspace shortcut` on your desktop open with properties & save id as `WorkSpaceID`
+- Find the `Workspace shortcut` on your desktop open with properties & save id as `WorkSpaceID` in `work.bat`
 ### Create key mapping
 - Open `PowerToys -> Keyboard Manager` and map keys to run `work.bat`
 ## Save as Work.bat
