@@ -7,16 +7,18 @@
 ## Save as Work.bat
 ```bat
 @ECHO OFF
-REM === Configruation  ===
-SET WorkSpaceID=XXXXX
+REM === Configuration ===
+SET "WorkSpaceID=xxxxx"
+SET "Programs=program1.exe program2.exe"
 
-REM === Hide All Programs  ===
-powershell -command "(New-Object -ComObject shell.application).ToggleDesktop()"
+REM === Hide All Programs ===
+POWERSHELL -command "(New-Object -ComObject shell.application).ToggleDesktop()"
 
 REM === Run PowerToys Workspace ===
-ECHO Starting workspace...
 START "" "%USERPROFILE%\AppData\Local\PowerToys\PowerToys.WorkspacesLauncher.exe" {%WorkSpaceID%} 1
 
-REM === Force close YOUR programs immediately ===
-TASKKILL /IM PROGRAM.exe /F >NUL 2>&1
+REM === Force kill programs ===
+for %%p in (%Programs%) do (
+    TASKKILL /im "%%p" /f >NUL 2>&1
+)
 ```
